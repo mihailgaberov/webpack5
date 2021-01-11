@@ -1,4 +1,13 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url('./InputMono-Black.ttf') format('ttf'),
+    url('./InputMono-BlackItalic.ttf') format('ttf');
+    font-weight: 600;
+    font-style: normal;
+}
+
 .hello {
     color: red;
-    background: url("./icon.png");
+    font-family: MyFont, serif;
+    background: url('./icon.png');
 }
