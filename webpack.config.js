@@ -31,6 +31,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     optimization: {
+        usedExports: true,
         moduleIds: 'deterministic',
         runtimeChunk: 'single',
         splitChunks: {
