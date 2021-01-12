@@ -5,7 +5,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
     mode: 'development',
     entry: {
-        index: './src/index.js',
+        // index: './src/index.js',
+        index: './src/index.ts',
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -14,6 +15,11 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
             {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader'],
@@ -26,6 +32,9 @@ module.exports = {
             title: 'Caching',
         }),
     ],
+    resolve: {
+        extensions: [ '.tsx', '.ts', '.js' ],
+    },
     output: {
         filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'dist')
